@@ -17,3 +17,6 @@ testlogs/
 # 💥 Crash logs or error outputs (optional)
 *.log
 
+extract_*/
+
+
