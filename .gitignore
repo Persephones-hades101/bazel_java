@@ -1,0 +1,19 @@
+# 🔨 Bazel output directory
+bazel-*
+
+# 🌲 Symlink forest used during builds
+bazel-out/
+bazel-bin/
+bazel-testlogs/
+bazel-genfiles/
+
+# ⚙️ Bazel cache and execution logs (optional)
+*.runfiles/
+*.sandbox/
+
+# 🔬 Test result XMLs and logs
+testlogs/
+
+# 💥 Crash logs or error outputs (optional)
+*.log
+
