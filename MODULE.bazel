@@ -4,3 +4,19 @@ module(
 )
 
 bazel_dep(name = "rules_java", version = "7.0.0")  # Pulls Java build rules
+bazel_dep(name = "rules_jvm_external", version = "5.3")
+
+# Declare dependency to bring JUnit from Maven
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+maven.install(
+    artifacts = [
+        "junit:junit:4.13.2",
+        "org.hamcrest:hamcrest-core:1.3",
+        "com.google.guava:guava:31.1-jre",  # Added Guava
+
+    ],
+    repositories = ["https://repo1.maven.org/maven2"],
+)
+
+use_repo(maven, "maven")

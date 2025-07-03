@@ -1,5 +1,27 @@
+java_library(
+    name = "string-utils",
+    srcs = ["src/com/example/util/StringUtils.java"],
+    visibility = ["//visibility:public"],
+)
+
+
+
 java_binary(
     name = "hello-world",
     srcs = ["src/com/example/HelloWorld.java"],
     main_class = "com.example.HelloWorld",
+    deps =[
+        ":string-utils"
+    ]
+)
+
+java_test(
+    name = "hello-world-test",
+    srcs = ["src/com/example/HelloWorldTest.java"],
+    test_class = "com.example.HelloWorldTest",  # Add this line
+    deps = [
+        "@maven//:junit_junit",
+        "@maven//:org_hamcrest_hamcrest_core",
+        ":string-utils"
+    ],
 )
