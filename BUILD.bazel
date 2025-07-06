@@ -1,7 +1,21 @@
-
 load("//custom_rules:property_rules.bzl", "properties_file")
+load("//custom_rules:xsd_jaxb.bzl", "xsd_jaxb")
 
 
+# # Creating Java object with XSD
+# not working !!!
+# xsd_jaxb(
+#     name = "purchase_order_model",
+#     srcs = ["schemas/purchase_order.xsd"],
+#     package = "com.example.model",
+#     deps = [
+#         "@maven//:javax_xml_bind_jaxb_api",
+#     ],
+# )
+
+
+
+# creating a properties file dynamically during the build using custom rule property_rules.bzl
 properties_file(
     name = "app-config",
     properties = {
