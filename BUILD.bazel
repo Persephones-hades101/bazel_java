@@ -1,3 +1,17 @@
+
+load("//custom_rules:property_rules.bzl", "properties_file")
+
+
+properties_file(
+    name = "app-config",
+    properties = {
+        "app.name": "MyApp",
+        "app.version": "1.0.0",
+        "app.debug": "true",
+    },
+)
+
+
 java_library(
     name = "string-utils",
     srcs = ["src/com/example/util/StringUtils.java"],
@@ -13,6 +27,10 @@ java_library(
         "@maven//:com_google_guava_guava",
     ],
 )
+
+
+
+
 
 java_binary(
     name = "hello-world",
